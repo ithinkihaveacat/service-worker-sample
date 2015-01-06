@@ -1,0 +1,31 @@
+<html>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('worker.js').then(function (registration) {
+      console.log('ServiceWorker registered');
+      if (!navigator.serviceWorker.controller) {
+        console.log(' ... but not installed! (Reload to install)');
+      } else {
+        console.log(' ... and installed')
+      }
+    }).catch(function(err) {
+      console.log('ServiceWorker could not be registered: ', err);
+    });
+  }
+</script>
+
+<body>
+  <h1>service-worker</h1>
+
+  <h2><a href="./index.html">reload</a></h2>
+
+  <p>
+    <img src="https://farm8.staticflickr.com/7542/15976283580_bc868834e2_n.jpg">
+  </p>
+  <p>
+    <img src="https://farm8.staticflickr.com/7476/16161684201_abcb370ace_n.jpg">
+  </p>
+  
+</body>
+
+</html>
