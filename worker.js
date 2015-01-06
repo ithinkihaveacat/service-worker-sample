@@ -3,13 +3,11 @@ self.addEventListener('fetch', function (event) {
   var request = event.request;
   var response = fetch(request);
   
-  // responseWith second (ok)
+  event.respondWith(response);
   
   response.then(function (obj) {
     obj.clone();
   });
-  
-  event.respondWith(response);  
   
 });
 
